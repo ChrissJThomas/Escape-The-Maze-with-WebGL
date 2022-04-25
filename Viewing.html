@@ -154,9 +154,6 @@
 				m.solidObjects[i].render(m.myWEBGL.program);
 			}
 
-
-			// checkTrigger();
-
 			requestAnimationFrame(loop);
 		}
 
@@ -195,28 +192,16 @@
 					m.camLoc[0]+= Math.sin(m.camRot[1])*0.8;
 					m.camLoc[2]+= Math.cos(m.camRot[1])*0.8;
 
-					// checkCollision();
-					// for(var i = 0;i< m.solidObjects.length; i++){
 						if (checkCollision() == true) {
 							console.log("hit");
 							m.camLoc[0]-= Math.sin(m.camRot[1])*0.8;
 							m.camLoc[2]-= Math.cos(m.camRot[1])*0.8;
 						}
-					// }
-
-					//triggerobjects = enemies
+			
 					for(var i = 0;i< m.triggerObjects.length; i++){
 						if (Math.abs(camerax - m.triggerObjects[i].loc[0])<.5 && Math.abs(cameraz-(m.triggerObjects[i].loc[2])) < .5) {
-							// console.log("coin!");
-							// m.triggerObjects.splice(i,1);
-
-							// m.coins++;
 
 							document.getElementById('win').innerHTML = ("You were hit by a Dino Cactus! Welp you're back at the beginning");
-
-							//triggerobjects = enemies
-							//solidobjects = walls
-							//myshapes = start/stop markers
 
 							m.camLoc[0] = 2;
 							m.camLoc[2] = -2;
@@ -225,17 +210,8 @@
 
 					for(var i = 0;i< m.myShapes.length; i++){
 						if (Math.abs(camerax - m.myShapes[i].loc[0])<.8 && Math.abs(cameraz-(m.myShapes[i].loc[2]-1)) < .8) {
-							// console.log("coin!");
-							// m.triggerObjects.splice(i,1);
-
-							// m.coins++;
 
 							document.getElementById('win').innerHTML = ("WOW you actually made it!! Well I don't know what you were expecting...");
-
-							//triggerobjects = enemies
-							//solidobjects = walls
-							//myshapes = start/stop markers
-
 
 						}
 					}
@@ -258,25 +234,16 @@
 					for(var i = 0;i< m.triggerObjects.length; i++){
 						if (Math.abs(camerax - m.triggerObjects[i].loc[0])<.5 && Math.abs(cameraz-(m.triggerObjects[i].loc[2])) < .5) {
 							console.log("coin!");
-							// m.triggerObjects.splice(i,1);
-
-							// m.coins++;
+						
 							document.getElementById('win').innerHTML = ("You were hit by a Dino Cactus! Welp you're back at the beginning");						}
 					}
 					for(var i = 0;i< m.myShapes.length; i++){
 						console.log("entering for loop for myShapes");
 						if (Math.abs(camerax - m.myShapes[i].loc[0])<.8 && Math.abs(cameraz-(m.myShapes[i].loc[2])-1) < .8) {
 							console.log("finish spot");
-							// console.log("coin!");
-							// m.triggerObjects.splice(i,1);
-
-							// m.coins++;
 
 							document.getElementById('win').innerHTML = ("WOW you actually made it!! Well I don't know what you were expecting...");
 
-							//triggerobjects = enemies
-							//solidobjects = walls
-							//myshapes = start/stop markers
 							m.camLoc[0] = 2;
 							m.camLoc[2] = -2;
 
