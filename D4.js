@@ -60,8 +60,7 @@ class Box extends Alltexture
 		super();
 
 		this.tex = createCrate();
-		// this.buffer = gl.createBuffer();
-		// gl.bindBuffer(gl.ARRAY_BUFFER, this.buffer);
+		
 		this.vertices =
 		[
 			//x 	y		z			s 		t
@@ -99,8 +98,6 @@ class Box extends Alltexture
 		this.loc = [0,0,0];
 		this.rot = [0,0,0];
 
-		// this.myTexture = gl.createTexture();
-		// gl.bindTexture(gl.TEXTURE_2D, this.myTexture);
 		gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,64,64,0,gl.RGBA,gl.UNSIGNED_BYTE,new Uint8Array(this.tex));
 	}
 }
@@ -111,8 +108,7 @@ class Box2 extends Alltexture
 		super();
 
 		this.tex = createBrick();
-		// this.buffer = gl.createBuffer();
-		// gl.bindBuffer(gl.ARRAY_BUFFER, this.buffer);
+		
 		this.vertices =
 		[
 			//x 	y		z			s 		t
@@ -162,8 +158,7 @@ class DinoBox extends Alltexture
 		super();
 
 		this.tex = createCactiDino();
-		// this.buffer = gl.createBuffer();
-		// gl.bindBuffer(gl.ARRAY_BUFFER, this.buffer);
+		
 		this.vertices =
 		[
 			//x 	y		z			s 		t
@@ -201,8 +196,6 @@ class DinoBox extends Alltexture
 		this.loc = [0,0,0];
 		this.rot = [0,0,0];
 
-		// this.myTexture = gl.createTexture();
-		// gl.bindTexture(gl.TEXTURE_2D, this.myTexture);
 		gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,16,16,0,gl.RGBA,gl.UNSIGNED_BYTE,new Uint8Array(this.tex));
 	}
 }
@@ -213,8 +206,7 @@ class SrtStpBox extends Alltexture
 		super();
 
 		this.tex = createStSp();
-		// this.buffer = gl.createBuffer();
-		// gl.bindBuffer(gl.ARRAY_BUFFER, this.buffer);
+		
 		this.vertices =
 		[
 			//x 	y		z			s 		t
@@ -252,8 +244,6 @@ class SrtStpBox extends Alltexture
 		this.loc = [0,0,0];
 		this.rot = [0,0,0];
 
-		// this.myTexture = gl.createTexture();
-		// gl.bindTexture(gl.TEXTURE_2D, this.myTexture);
 		gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,16,16,0,gl.RGBA,gl.UNSIGNED_BYTE,new Uint8Array(this.tex));
 	}
 }
@@ -264,8 +254,7 @@ class Floor extends Alltexture
 		super();
 
 		this.tex = createCheckered();
-		// this.buffer = gl.createBuffer();
-		// gl.bindBuffer(gl.ARRAY_BUFFER, this.buffer);
+		
 		this.vertices =
 		[
 			//x 	y		z			s 		t
@@ -280,8 +269,6 @@ class Floor extends Alltexture
 		this.loc = [0,0,0];
 		this.rot = [0,0,0];
 
-		// this.myTexture = gl.createTexture();
-		// gl.bindTexture(gl.TEXTURE_2D, this.myTexture);
 		gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,256,256,0,gl.RGBA,gl.UNSIGNED_BYTE,new Uint8Array(this.tex));
 	}
 }
