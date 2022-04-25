@@ -183,25 +183,6 @@
 			}
 		}
 
-		function checkTrigger(){
-			// for(var i = 0; i < m.radarObjects.length; i++){
-			//
-			// 	var camX = m.camLoc[0];
-			// 	var objX = m.radarObjects[i].loc[0];
-			// 	var camZ = m.camLoc[2]*(-1);
-			// 	var objZ = m.radarObjects[i].loc[2];
-			// 	var distanceX = Math.abs(camX-objX);
-			// 	var distanceZ = Math.abs(camZ-objZ);
-			//
-			// 	if (distanceX < 1 && distanceZ < 1) {
-			// 		document.getElementById('spotlight').innerHTML = ("You got hit by the spotlight!");
-			// 		console.log("box area reached");
-			// 		m.camLoc[0]=0;
-			// 		m.camLoc[2]=0
-			// 	}
-			// }
-		}
-
 		function keyDown(event)
 		{
 			var camerax = m.camLoc[0];
@@ -265,8 +246,6 @@
 					m.camLoc[0]-= Math.sin(m.camRot[1])*0.8;
 					m.camLoc[2]-= Math.cos(m.camRot[1])*0.8;
 
-					// checkCollision();
-
 					// for(var i = 0;i< m.solidObjects.length; i++){
 						if (checkCollision() == true) {
 							console.log("hit");
@@ -310,22 +289,19 @@
 					m.camLoc[2]+= Math.sin(m.camRot[1])*0.8;
 					m.camLoc[0]-= Math.cos(m.camRot[1])*0.8;
 
-					// checkCollision();
-					// for(var i = 0;i< m.solidObjects.length; i++){
 						if (checkCollision() == true) {
 							console.log("hit");
 							m.camLoc[2]-= Math.sin(m.camRot[1])*0.8;
 							m.camLoc[0]+= Math.cos(m.camRot[1])*0.8;
 
 						}
-					// }
-					//
+				
 					for(var i = 0;i< m.triggerObjects.length; i++){
 						if (Math.abs(camerax - m.triggerObjects[i].loc[0])<.5 && Math.abs(cameraz-(m.triggerObjects[i].loc[2])-1) < .5) {
 							console.log("block");
-							// m.triggerObjects.splice(i,1);
+							
 
-							// m.coins++;
+							
 							document.getElementById('win').innerHTML = ("You were hit by a Dino Cactus! Welp you're back at the beginning");
 
 							m.camLoc[0] = 2;
@@ -334,16 +310,11 @@
 					}
 					for(var i = 0;i< m.myShapes.length; i++){
 						if (Math.abs(camerax - m.myShapes[i].loc[0])<.8 && Math.abs(cameraz-(m.myShapes[i].loc[2])-1) < .8) {
-							// console.log("coin!");
-							// m.triggerObjects.splice(i,1);
-
-							// m.coins++;
+							
 
 							document.getElementById('win').innerHTML = ("WOW you actually made it!! Well I don't know what you were expecting...");
 
-							//triggerobjects = enemies
-							//solidobjects = walls
-							//myshapes = start/stop markers
+							
 
 
 						}
@@ -355,22 +326,18 @@
 					m.camLoc[2]-= Math.sin(m.camRot[1])*0.8;
 					m.camLoc[0]+= Math.cos(m.camRot[1])*0.8;
 
-					// checkCollision();
-					// for(var i = 0;i< m.solidObjects.length; i++){
+					
 						if (checkCollision() == true) {
 							console.log("hit");
 							m.camLoc[2]+= Math.sin(m.camRot[1])*0.8;
 							m.camLoc[0]-= Math.cos(m.camRot[1])*0.8;
 
 						}
-					// }
-					//
+					
 					for(var i = 0;i< m.triggerObjects.length; i++){
 						if (Math.abs(camerax - m.triggerObjects[i].loc[0])<.5 && Math.abs(cameraz-(m.triggerObjects[i].loc[2])) < .5) {
 							console.log("coin!");
-							// m.triggerObjects.splice(i,1);
-
-							// m.coins++;
+							
 							document.getElementById('win').innerHTML = ("You were hit by a Dino Cactus! Welp you're back at the beginning");
 
 							m.camLoc[0] = 2;
@@ -379,17 +346,9 @@
 					}
 					for(var i = 0;i< m.myShapes.length; i++){
 						if (Math.abs(camerax - m.myShapes[i].loc[0])<.5 && Math.abs(cameraz-(m.myShapes[i].loc[2])-1) < .5) {
-							// console.log("coin!");
-							// m.triggerObjects.splice(i,1);
-
-							// m.coins++;
+							
 
 							document.getElementById('win').innerHTML = ("WOW you actually made it!! Well I don't know what you were expecting...");
-
-							//triggerobjects = enemies
-							//solidobjects = walls
-							//myshapes = start/stop markers
-
 
 						}
 					}
@@ -400,9 +359,7 @@
 					for(var i = 0;i< m.triggerObjects.length; i++){
 						if (Math.abs(camerax - m.triggerObjects[i].loc[0])<.5 && Math.abs(cameraz-(m.triggerObjects[i].loc[2])) < .5) {
 							console.log("coin!");
-							// m.triggerObjects.splice(i,1);
-
-							// m.coins++;
+							
 							document.getElementById('win').innerHTML = ("You were hit by a Dino Cactus! Welp you're back at the beginning");
 
 							m.camLoc[0] = 2;
@@ -411,18 +368,11 @@
 					}
 					for(var i = 0;i< m.myShapes.length; i++){
 						if (Math.abs(camerax - m.myShapes[i].loc[0])<.5 && Math.abs(cameraz-(m.myShapes[i].loc[2])-1) < .5) {
-							// console.log("coin!");
-							// m.triggerObjects.splice(i,1);
-
-							// m.coins++;
+							
 
 							document.getElementById('win').innerHTML = ("WOW you actually made it!! Well I don't know what you were expecting...");
 
-							//triggerobjects = enemies
-							//solidobjects = walls
-							//myshapes = start/stop markers
-
-
+				
 						}
 					}
 					break;
@@ -433,9 +383,7 @@
 					for(var i = 0;i< m.triggerObjects.length; i++){
 						if (Math.abs(camerax - m.triggerObjects[i].loc[0])<.5 && Math.abs(cameraz-(m.triggerObjects[i].loc[2])) < .5) {
 							console.log("coin!");
-							// m.triggerObjects.splice(i,1);
-
-							// m.coins++;
+							
 							document.getElementById('win').innerHTML = ("You were hit by a Dino Cactus! Welp you're back at the beginning");
 
 							m.camLoc[0] = 2;
@@ -444,17 +392,8 @@
 					}
 					for(var i = 0;i< m.myShapes.length; i++){
 						if (Math.abs(camerax - m.myShapes[i].loc[0])<.5 && Math.abs(cameraz-(m.myShapes[i].loc[2])-1) < .5) {
-							// console.log("coin!");
-							// m.triggerObjects.splice(i,1);
-
-							// m.coins++;
 
 							document.getElementById('win').innerHTML = ("WOW you actually made it!! Well I don't know what you were expecting...");
-
-							//triggerobjects = enemies
-							//solidobjects = walls
-							//myshapes = start/stop markers
-
 
 						}
 					}
@@ -658,18 +597,8 @@
 	   		 	this.triggerObjects = [];
 
 
-				// var boxEx = new Box();
-				// var boxEx2 = new Box2();
-				// var dino = new DinoBox();
-				// var start = new SrtStpBox();
-				// var finish = new SrtStpBox();
-				// boxEx2.tex = createBrick();
 				var ground = new Floor();
-				// this.myShapes.push(boxEx);
 				this.myShapes.push(ground);
-				// this.myShapes.push(boxEx2);
-				// this.myShapes.push(dino);
-				// this.myShapes.push(start);
 				this.name = "My Class";
 		}
 	}
@@ -699,9 +628,6 @@
 			requestAnimationFrame(loop);
 			window.onkeydown = keyDown;
 
-
-			// gl.canvas.width  = window.innerWidth-10;
-			// gl.canvas.height = window.innerHeight-120;
 		</SCRIPT>
 
 	</BODY>
